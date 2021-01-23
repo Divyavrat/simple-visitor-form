@@ -13,11 +13,11 @@
     display: grid;
     place-items: center;
     min-height:100vh;
-    background: #222 url('https://images.unsplash.com/photo-1610967874184-40ec45307693?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDU0fGFldTZyTC1qNmV3fHxlbnwwfHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2048&q=60') no-repeat center center;
+    /* background: #222 url('https://images.unsplash.com/photo-1610967874184-40ec45307693?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDU0fGFldTZyTC1qNmV3fHxlbnwwfHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2048&q=60') no-repeat center center; */
   }
 form{
     text-align:center;
-    background-color:rgba(0,0,0,0.4);
+    /* background-color:rgba(0,0,0,0.4); */
     border-radius:50px;
     padding:50px;
     display:flex;
@@ -48,6 +48,10 @@ if(isset($_POST['studentFormSave']))
             $fullname = $_POST['fullname'];
             $phone = $_POST['phone'];
             $address = $_POST['address'];
+            if(strlen($rollno)<=0 && strlen($fullname)<=0 && strlen($phone)<=0 && strlen($address)<=0){
+                echo $erroralert;
+                die;
+            }
             $stmt->bind_param('isss', $rollno,$fullname,$phone,$address);
             $stmt->execute();
             echo('<div class="alert">Your form was saved! Thank You.</div>');
@@ -60,10 +64,10 @@ if(isset($_POST['studentFormSave']))
 else {
 ?>
         <form method="post" action="">
-            <input type="text" name="rollno" placeholder="Roll No." class="mb">
-            <input type="text" name="fullname" placeholder="Name" class="mb">
-            <input type="text" name="phone" placeholder="Phone" class="mb">
-            <textarea name="address" rows="5" placeholder="Address"></textarea>
+            <input type="text" name="rollno" placeholder="Roll No." class="mb" required="required">
+            <input type="text" name="fullname" placeholder="Name" class="mb" required="required">
+            <input type="text" name="phone" placeholder="Phone" class="mb" required="required">
+            <textarea name="address" rows="5" placeholder="Address" required="required"></textarea>
             <button class="button-primary" name="studentFormSave" type="submit">Send</button>
         </form>
 <?php } ?>
