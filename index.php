@@ -13,11 +13,11 @@
     display: grid;
     place-items: center;
     min-height:100vh;
-    /* background: #222 url('https://images.unsplash.com/photo-1610967874184-40ec45307693?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDU0fGFldTZyTC1qNmV3fHxlbnwwfHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2048&q=60') no-repeat center center; */
+    background: #222 url('https://images.unsplash.com/photo-1610967874184-40ec45307693?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDU0fGFldTZyTC1qNmV3fHxlbnwwfHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2048&q=60') no-repeat center center;
   }
 form{
     text-align:center;
-    /* background-color:rgba(0,0,0,0.4); */
+    background-color:rgba(0,0,0,0.4);
     border-radius:50px;
     padding:50px;
     display:flex;
